@@ -68,6 +68,7 @@
   * Change SSL file paths to be configurable (Dave Mussulman).
   
   * Change `rpy2` version from 2.9.5 to 3.2.0 (James Balamuta).
+
   * Change DevMode login to co-exist with other login methods (Dave Mussulman).
 
   * Fix dead letter cron job for `async` v3 (Matt West).
