@@ -7,7 +7,7 @@ router.get('/', function(req, res, _next) {
     if (res.locals.authn_user.provider == 'shibboleth') {
         res.redirect('/Shibboleth.sso/Logout');
     } else {
-        res.redirect('/');
+        res.redirect('/pl/login');
     }
 });
 
