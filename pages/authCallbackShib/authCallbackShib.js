@@ -11,9 +11,12 @@ router.get('/:action?/:target(*)?', function(req, res, next) {
     var authUid = null;
     var authName = null;
     var authUin = null;
-    if (req.headers['x-trust-auth-uid']) authUid = req.headers['x-trust-auth-uid'];
-    if (req.headers['x-trust-auth-name']) authName = req.headers['x-trust-auth-name'];
-    if (req.headers['x-trust-auth-uin']) authUin = req.headers['x-trust-auth-uin'];
+    // if (req.headers['x-trust-auth-uid']) authUid = req.headers['x-trust-auth-uid'];
+    // if (req.headers['x-trust-auth-name']) authName = req.headers['x-trust-auth-name'];
+    // if (req.headers['x-trust-auth-uin']) authUin = req.headers['x-trust-auth-uin'];
+    if (req.headers['mail']) authUid = req.headers['mail'];
+    if (req.headers['givenname']) authName = req.headers['givenname'];
+    if (req.headers['ubceducwlpuid']) authUin = req.headers['ubceducwlpuid'].substring(0, 8);
     if (!authUid) return next(new Error('No authUid'));
 
     // catch bad Shibboleth data
